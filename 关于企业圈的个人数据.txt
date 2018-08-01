@@ -1,0 +1,31 @@
+mac FF-11-29-64-CE-71
+myAdapterÊÇcom.example.netvmeettyb.msg.adapter.MessageAdapter@9c24df7
+FF-0F-30-48-11-63
+com.example.netvmeettyb.msg.MsgMain@3a008d19
+
+
+ *****context  com.example.netvmeettyb.msg.MsgMain@26ab912b
+myAdapterÊÇcom.example.netvmeettyb.msg.adapter.MessageAdapter@1041ab82**********
+ str cf 
+tblÊÇcom.vmeet.netsocket.data.Tbl@3291b7e0********** 
+sendMac   FF-0F-30-48-11-63********** 
+currMacFF-0F-30-48-11-63 **********
+rowCreatMac  null********** 
+nameÀ×¸Õ
+
+MSGSET¡Êmsglist¡Êrowid1¡Ö1531990674339¡ÒinfoType¡Ötxt¡ÒmsgTxt¡Övv¡Òdatetime¡Ö2018-07-19 16:57:54¡ÒDoT¡Ösend¡Òsender¡ÖFF-11-29-64-CE-71¡ÒsenderName¡ÖÉÌÃ÷ÏÀ¡Òrecs¡ÖFF-0F-30-48-11-63¡ÒsearchKey¡ÖFF-0F-30-48-11-63¡ÒdirCount¡Ö¡Ò
+
+
+
+
+07-20 12:41:47.080 1655-1655/com.example.netvmeettyb I/MsgData: msglist addRowToMsgTblAnddRecentTbl rowid1¡Ö1532061707091¡ÒinfoType¡Ötxt¡ÒmsgTxt¡Örggdff¡Òdatetime¡Ö2018-07-20 12:41:47¡ÒDoT¡Örec¡ÒsearchKey¡ÖFF-0F-30-48-11-63¡Òsender¡ÖFF-0F-30-48-11-63¡ÒsenderName¡ÖÀ×¸Õ¡Òrecs¡ÖFF-11-29-64-CE-71¡Ò
+     addOrUpdateRcentbl 
+     addOrUpdateRcentbl null rowid1¡ÖFF-0F-30-48-11-63¡Ò
+     addOrUpdateRcentbl rowid1¡ÖFF-0F-30-48-11-63¡Ò
+     addOrUpdateRcentbl row.rowStr rowid1¡Ö1532061707091¡ÒinfoType¡Ötxt¡ÒmsgTxt¡Örggdff¡Òdatetime¡Ö2018-07-20 12:41:47¡ÒDoT¡Örec¡ÒsearchKey¡ÖFF-0F-30-48-11-63¡Òsender¡ÖFF-0F-30-48-11-63¡ÒsenderName¡ÖÀ×¸Õ¡Òrecs¡ÖFF-11-29-64-CE-71¡Ò
+07-20 12:41:47.080 1655-1655/com.example.netvmeettyb E/Tbl: --- save filePath data/data/com.example.netvmeettyb/FF-11-29-64-CE-71/Data/rows/MSGSET/recentlist.dat ---
+    --- save  stringBuilder.toString() rowid1¡ÖFF-0F-30-48-11-63¡ÒDoT¡Örec¡ÒchatType¡Ösingle¡Òname¡ÖÀ×¸Õ¡ÒinfoType¡Ötxt¡Òdatetime¡Ö2018-07-20 12:41:47¡ÒmsgTxt¡Örggdff¡ÒisTop¡Öfalse¡Ò¡Ó ---
+07-20 12:41:47.080 1655-1655/com.example.netvmeettyb E/FileTool: --- writeTextToGzipFile rowid1¡ÖFF-0F-30-48-11-63¡ÒDoT¡Örec¡ÒchatType¡Ösingle¡Òname¡ÖÀ×¸Õ¡ÒinfoType¡Ötxt¡Òdatetime¡Ö2018-07-20 12:41:47¡ÒmsgTxt¡Örggdff¡ÒisTop¡Öfalse¡Ò¡Ó ---
+07-20 12:41:47.082 1655-1655/com.example.netvmeettyb E/Tbl: --- save filePath data/data/com.example.netvmeettyb/FF-11-29-64-CE-71/Data/rows/MSGSET/msglist.dat ---
+    --- save  stringBuilder.toString() rowid1¡Ö1532046701728¡ÒinfoType¡Ötxt¡ÒmsgTxt¡Ö 333333¡Òdatetime¡Ö2018-07-20 08:31:41¡ÒDoT¡Örec¡ÒsearchKey¡ÖFF-0F-30-48-11-63¡Òsender¡ÖFF-0F-30-48-11-63¡ÒsenderName¡ÖÀ×¸Õ¡Òrecs¡ÖFF-11-29-64-CE-71¡Ò¡Órowid1¡Ö1532061295330¡ÒinfoType¡Ötxt¡ÒmsgTxt¡Öhb¡Òdatetime¡Ö2018-07-20 12:34:55¡ÒDoT¡Ösend¡Òsender¡ÖFF-11-29-64-CE-71¡ÒsenderName¡ÖÉÌÃ÷ÏÀ¡Òrecs¡ÖFF-0F-30-48-11-63¡ÒsearchKey¡ÖFF-0F-30-48-11-63¡ÒdirCount¡Ö¡Ò¡Órowid1¡Ö1532061473328¡ÒinfoType¡Ötxt¡ÒmsgTxt¡Öggfg¡Òdatetime¡Ö2018-07-20 12:37:53¡ÒDoT¡Ösend¡Òsender¡ÖFF-11-29-64-CE-71¡ÒsenderName¡ÖÉÌÃ÷ÏÀ¡Òrecs¡ÖFF-0F-30-48-11-63¡ÒsearchKey¡ÖFF-0F-30-48-11-63¡ÒdirCount¡Ö¡Ò¡Órowid1¡Ö1532061572350¡ÒinfoType¡Ötxt¡ÒmsgTxt¡Öuhh¡Òdatetime¡Ö2018-07-20 12:39:32¡ÒDoT¡Örec¡ÒsearchKey¡ÖFF-0F-30-48-11-63¡Òsender¡ÖFF-0F-30-48-11-63¡ÒsenderName¡ÖÀ×¸Õ¡Òrecs¡ÖFF-11-29-64-CE-71¡Ò¡Órowid1¡Ö1532061685732¡ÒinfoType¡Ötxt¡ÒmsgTxt¡Öjdjdjd¡Òdatetime¡Ö2018-07-20 12:41:25¡ÒDoT¡Örec¡ÒsearchKey¡ÖFF-0F-30-48-11-63¡Òsender¡ÖFF-0F-30-48-11-63¡ÒsenderName¡ÖÀ×¸Õ¡Òrecs¡ÖFF-11-29-64-CE-71¡Ò¡Órowid1¡Ö1532061707091¡ÒinfoType¡Ötxt¡ÒmsgTxt¡Örggdff¡Òdatetime¡Ö2018-07-20 12:41:47¡ÒDoT¡Örec¡ÒsearchKey¡ÖFF-0F-30-48-11-63¡Òsender¡ÖFF-0F-30-48-11-63¡ÒsenderName¡ÖÀ×¸Õ¡Òrecs¡ÖFF-11-29-64-CE-71¡Ò¡Ó ---
+07-20 12:41:47.082 1655-1655/com.example.netvmeettyb E/FileTool: --- writeTextToGzipFile rowid1¡Ö1532046701728¡ÒinfoType¡Ötxt¡ÒmsgTxt¡Ö 333333¡Òdatetime¡Ö2018-07-20 08:31:41¡ÒDoT¡Örec¡ÒsearchKey¡ÖFF-0F-30-48-11-63¡Òsender¡ÖFF-0F-30-48-11-63¡ÒsenderName¡ÖÀ×¸Õ¡Òrecs¡ÖFF-11-29-64-CE-71¡Ò¡Órowid1¡Ö1532061295330¡ÒinfoType¡Ötxt¡ÒmsgTxt¡Öhb¡Òdatetime¡Ö2018-07-20 12:34:55¡ÒDoT¡Ösend¡Òsender¡ÖFF-11-29-64-CE-71¡ÒsenderName¡ÖÉÌÃ÷ÏÀ¡Òrecs¡ÖFF-0F-30-48-11-63¡ÒsearchKey¡ÖFF-0F-30-48-11-63¡ÒdirCount¡Ö¡Ò¡Órowid1¡Ö1532061473328¡ÒinfoType¡Ötxt¡ÒmsgTxt¡Öggfg¡Òdatetime¡Ö2018-07-20 12:37:53¡ÒDoT¡Ösend¡Òsender¡ÖFF-11-29-64-CE-71¡ÒsenderName¡ÖÉÌÃ÷ÏÀ¡Òrecs¡ÖFF-0F-30-48-11-63¡ÒsearchKey¡ÖFF-0F-30-48-11-63¡ÒdirCount¡Ö¡Ò¡Órowid1¡Ö1532061572350¡ÒinfoType¡Ötxt¡ÒmsgTxt¡Öuhh¡Òdatetime¡Ö2018-07-20 12:39:32¡ÒDoT¡Örec¡ÒsearchKey¡ÖFF-0F-30-48-11-63¡Òsender¡ÖFF-0F-30-48-11-63¡ÒsenderName¡ÖÀ×¸Õ¡Òrecs¡ÖFF-11-29-64-CE-71¡Ò¡Órowid1¡Ö1532061685732¡ÒinfoType¡Ötxt¡ÒmsgTxt¡Öjdjdjd¡Òdatetime¡Ö2018-07-20 12:41:25¡ÒDoT¡Örec¡ÒsearchKey¡ÖFF-0F-30-48-11-63¡Òsender¡ÖFF-0F-30-48-11-63¡ÒsenderName¡ÖÀ×¸Õ¡Òrecs¡ÖFF-11-29-64-CE-71¡Ò¡Órowid1¡Ö1532061707091¡ÒinfoType¡Ötxt¡ÒmsgTxt¡Örggdff¡Òdatetime¡Ö2018-07-20 12:41:47¡ÒDoT¡Örec¡ÒsearchKey¡ÖFF-0F-30-48-11-63¡Òsender¡ÖFF-0F-30-48-11-63¡ÒsenderName¡ÖÀ×¸Õ¡Òrecs¡ÖFF-11-29-64-CE-71¡Ò¡Ó ---

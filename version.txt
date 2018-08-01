@@ -1,0 +1,4 @@
+BASE∈version∈rowid1≈1∫ver≈2.3.1∫createdatetime≈2018/03/19∫content≈1、可查看版本介绍
+2、对OA同步问题进行优化∫∫rowCreatTime≈2018-04-10 14:06:39∮rowid1≈2∫ver≈3.0.0∫createdatetime≈2018/04/09∫content≈1、解决OA待办不同步问题。 
+2、优化OA界面。
+3、增加版本更新提示框。∫∫rowCreatTime≈2018-04-10 14:06:39∮

@@ -1,0 +1,910 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.example.netvmeettyb"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="1"
+    android:versionName="1.0"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-sdk
+        android:minSdkVersion="17"
+        android:targetSdkVersion="26"/>
+
+    <!--uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" /-->
+    <!-- 读联系人权限 -->
+    <!--uses-permission android:name="android.permission.READ_CONTACTS" /-->
+    <!-- 写联系人权限 -->
+    <!--uses-permission android:name="android.permission.WRITE_CONTACTS" /-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!--uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!--uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /-->
+    <!--uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" /-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!--uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" /-->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.;"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <!--uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" /-->
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+
+
+    //云适配SDK用到的权限
+    <uses-permission android:name="android.permission.STORAGE"/>
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+
+    <!-- 小红点 -->
+    <!-- //测试华为 -->
+    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS"/>
+    <!-- <uses-permission android:name="com.huawei.permission.sec.MDM" /> -->
+
+
+    <!-- //作用：安装时系统依据此权限识别该应用的证书，并且动态分配权限。 -->
+    <!-- //测试三星 -->
+    <uses-permission android:name="com.sec.android.provider.badge.permission.READ"/>
+    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE"/>
+
+    <meta-data
+        android:name="com.example.ImageHelperUtil.GlideModule.MyCachingGlideModule"
+        android:value="GlideModule"/>
+
+    <!-- /*开启硬件加速功能，以获取crosswalk更好的体验*/ -->
+    <application
+        android:name=".service.MyApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.WelActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="com.example.netvmeettyb.activity.WelActivity"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".scene.safe.DashBoardsActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".scene.realtimedata2.RealTimeActivity2"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".BI.BILongLineActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".BI.BILongLineScrollActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".scene.ranliao.RanliaoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".scene.riLiRunOld.BIDeatilActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.BaseActivity"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.MyVideoActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".unlock.GestureLockActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.GestureLockDialogStyle"
+           />
+        <activity android:name=".mapPoint.PointMapActivity"/>
+        <activity android:name=".activity.WenDangActivity"/>
+        <!--
+            <activity
+            android:name="com.example.netvmeetsny.mapPoint.BIRealTimeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme" />
+        -->
+        <activity
+            android:name=".mapPoint.OldKeyIndexActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.VideoPlayActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".cloudstree.SearchUserActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".cloudstree.TreeMacsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".cloudstree.TreeRegActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".scrawl.ScrawlActivityPerPage2"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/Scrawl.Theme"/>
+        <activity
+            android:name=".unlock.PasswordResetActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".unlock.PasswordResetActivity1"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".unlock.PasswordOpenActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".unlock.FingerPrintActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".activity.SettingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.CollectActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.CollectItemActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".zxing.MipcaActivityCapture"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.UserInfoDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.UserInfoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.QunliaoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.XiangXiActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.ChatGroupSettingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.ChatGroupSettingDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"
+            android:windowSoftInputMode="stateAlwaysVisible"/>
+        <activity
+            android:name=".activity.ChatSingleSettingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.SearchActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.SearchContactActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.LauncherActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".activity.ApplyAddActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".cloudstree.TreeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".cloudstree.LevelTreectivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.RemoveGroupUserActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.SelectUserActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.SelectUserChatActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.SelectUserGroupActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.VpdfActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.ShowImageActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.ViewPagerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActionBarTheme"/>
+        <activity
+            android:name=".activity.CameraActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.MsgTextActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+
+        <service android:name=".service.MyServiceZHY">
+            <intent-filter>
+                <action android:name="com.example.netvmeettyb.service.MyServiceZHY"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".notice.NoticeRecordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".notice.NoticeSendActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".msg.MsgMain"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name="com.example.netvmeettyb.msgList.MsgMain"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.EpGroupChatActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".material.MaterialManagmentActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MaterialTheme.NoActionBar"/>
+        <activity
+            android:name=".material.MRActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".notice.NoticeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".notice.SingleNoticeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".notice.SingleNoticeNewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.MyWebViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".notice.NoticeRecsActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.CloudsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.MeetCloudsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".music.MusicActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".music.FindMusicActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".activity.SingleImageActivity"/>
+        <activity
+            android:name=".meetingcalendar.MeetCalendarActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".meetting.SingleMeetingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".meetting.SendMeettingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.DaiBanActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.GongHuiNewsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.NewsWebActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".meetting.DaibanMeetActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".tbl.activity.AppAnalyzeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".scene.keyindex.KeyIndexActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".scene.huanbao.HuanbaoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".scene.jizu.JizuActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".scene.meihao.meihaoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".scene.meihao.GuoluActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".scene.Changyong.ChangyongActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".scene.fadian.FadianActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".realtimedata.RealTimeActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".scene.realtimedata2.SecondUnitActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".map.HotmapActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".tbl.activity.NewsItemActivty"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".tbl.activity.NewsContentActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".tbl.activity.ExaminationActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".tbl.activity.ExamRecoderActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.AddUserActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".car.activity.CarActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".car.activity.CarRecordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".car.activity.CarHistoryRecordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".car.activity.CarDispatcherActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".guohe.GuoheActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".notice.GonggaoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".oldOA.activity.OAListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".oldOA.activity.PwdDilogActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.ActivityDialogStyle"/>
+        <activity
+            android:name=".oldOA.activity.OADetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".cloudstree.YunPanActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".notice.SingleGongGaoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".tbl.activity.WuYeListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".tbl.activity.WuYeSendActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity android:name=".activity.GroupMemberActivity"/>
+        <activity
+            android:name=".clip.PhotoClipActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/Scrawl.Theme"/>
+        <activity
+            android:name=".activity.RegActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".material.MaterialCommitActivity"/>
+        <activity
+            android:name=".commonView.CommonListActivity"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".commonView.ListViewEditActivity"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".car.activity.CarDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"
+            android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:name=".mapPoint.ItemizedOverlayDemo"/>
+        <activity android:name=".notice.YaoWenActivity"/>
+        <activity
+            android:name=".notice.JianBaoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".notice.NoticeListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity android:name=".activity.CodeActivity"/>
+        <activity
+            android:name=".ImageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Scrawl.Theme"/>
+        <activity
+            android:name=".activity.UserMacsAlphaShowActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.UserMacsShowActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.HintActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity
+            android:name=".material.FoodBoradActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".car.activity.DriverActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".car.activity.CarSelActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".material.TaskActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity android:name=".test.NetTestActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".clouds.DataSharedActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".clouds.MySharedActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".clouds.OthersSharedActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".clouds.DataSharedMessageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".clouds.DataActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".huiwu.HuiWuSingleMeetingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".huiwu.MeetCloudsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".huiwu.HuiWuActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".huiwu.HuiWuMeetActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".huiwu.HuiWuMineActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".huiwu.HuiWuListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".meetting.DataNoTreeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".pingjia.PJListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".scene.realtimedata2.BIRealTimeNewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".pingjia.PingJiaNewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".pingjia.PJTextNewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".hr.HRActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".hr.WagesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".hr.InfoMeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".hr.VocationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".hr.JiaQiActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".baoxiao.BaoXiaoDaiBanActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".baoxiao.BaoXiaoHistoryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".baoxiao.BaoXiaoListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".baoxiao.BaoXiaoDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".baoxiao.BaoXiaoShenPiActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".baoxiao.BaoXiaoViewPagerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomActionBarTheme"/>
+        <activity
+            android:name=".hr.WagesBIActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".material.ReservationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".baoxiao.BaoXiaoWillActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".baoxiao.BaoXiaoWillNewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".material.GoodsReplyActivity"/>
+        <activity
+            android:name=".BITree.fadian.FaDianTreeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".BITree.lirun.RiLiRunTreeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".BITree.lirun.SingleLiRunActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".BITree.fadian.SingleFaDianActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".BITree.ricunmei.RiCunMeiTreeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".BITree.riyingshou.RiYingShouActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".BITree.BIActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".material.NumberActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity android:name=".activity.HeadTestActivity"/>
+        <activity
+            android:name=".car.activity.HotWordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity android:name=".test.BitmapCircleActivity"/>
+        <activity android:name=".tianbao.TianBaoMainActivity"/>
+        <activity
+            android:name=".tianbao.YunYingFaDianActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".tianbao.YunYingRanLiaoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".storage.ManageStorageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".storage.FileStorageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".storage.ChatStorageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".baoxiao.MoneyDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".baoxiao.BaoXiaoSelShenPiActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".pingjia.PingJiaItemActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".pingjia.PJDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".test.GZIPActivity"/>
+        <activity android:name=".test.GZIPTypeActivity"/>
+        <activity android:name=".activity.BaseFragmentActivity"/>
+        <activity
+            android:name=".oldOA.activity.OAUserActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".oldOA.activity.CommentWordsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".oldOA.activity.TypicalWordsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".oldOA.activity.AgreeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".oldOA.activity.DisagreeResultActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".oldOA.activity.AgreeResultActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".oldOA.activity.AgreeResult1Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".oldOA.activity.AgreeResult2Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity android:name=".oldOA.activity.SelHandleUserActivity"/>
+        <activity
+            android:name=".oldOA.activity.OASelUserActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".oldOA.activity.OASelDepActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".oldOA.activity.OASelFlowActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".oldOA.activity.OAAgreeHandleActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".oldOA.activity.OAHandlerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".oldOA.activity.OAHandlerActivity2"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.PCLogConfirmActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.ShowVideoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".activity.ShowVideoActivity2"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".test.OpenFileTestActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+        <activity
+            android:name=".test.BrowserActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"/>
+
+        <service
+            android:name="com.yunshipei.core.download.YspDownload"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":ysp_download">
+            <intent-filter>
+                <action android:name="android.intent.action.ENTERPLORER_DOWNLOAD_SERVICES"/>
+            </intent-filter>
+        </service>
+
+        <activity android:name=".test.Wangdongdan">
+
+            <!--
+             <intent-filter>
+             <action android:name="android.intent.action.MAIN" />
+             <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+            -->
+        </activity>
+        <activity android:name=".activity.WebActivity"
+                  android:theme="@style/mytheme"></activity>
+        <activity
+            android:name=".activity.VersionInfoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JK.SwipeBack.Transparent.Theme"/>
+    </application>
+
+</manifest>
